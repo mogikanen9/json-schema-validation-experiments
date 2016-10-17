@@ -1,0 +1,9 @@
+{
+	"messageHeader": {
+		"sendingFacility": {
+			"identifier": "4090",
+			"name": "My Cool Sending Facility"
+		},
+		"endPoint": "Our Random HUB"
+	}
+}

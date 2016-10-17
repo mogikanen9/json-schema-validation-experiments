@@ -1,0 +1,67 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"id": "https://github.com/mogikanen9/json-schema-validation-experiments/schemas/physician.json",
+	"title": "Sample JSON Schema to describe physician",
+	"definitions": {
+		"address": {
+			"type": "object",
+			"properties": {
+				"street": {
+					"type": "string"
+				},
+				"city": {
+					"type": "string"
+				},
+				"province": {
+					"type": "string"
+				},
+				"postalCode": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"street_address",
+				"city",
+				"postalCode"
+			]
+		}
+	},
+	"type": "object",
+	"properties": {
+		"cpso": {
+			"description": "Unique identifier which is provided/genrated by College of Physicians of Ontario",
+			"type": "string"
+		},
+		"firstName": {
+			"description": "First Name",
+			"type": "string"
+		},
+		"lastName": {
+			"description": "Last Name",
+			"type": "string"
+		},
+		"practiceYears": {
+			"description": "Number of years of Practicing in Canada",
+			"type": "integer",
+			"minimum": 0,
+			"exclusiveMinimum": true
+		}
+	},
+	"clinics": {
+		"type": "object",
+		"properties": {
+			"name": {
+				"description": "Name of the clinic",
+				"type": "string"
+			},
+			"address": {
+				"$ref": "#/definitions/address"
+			}
+		}
+	},
+	"required": [
+		"cpso",
+		"firstName",
+		"lastName"
+	]
+}
