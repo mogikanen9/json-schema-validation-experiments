@@ -19,6 +19,7 @@ public class EveritJsonValidationServiceImpl implements ValidationService {
 
 		JSONObject rawSchema = new JSONObject(request.getSchema());
 		Schema schema = SchemaLoader.load(rawSchema);
+		
 		try {
 			schema.validate(new JSONObject(request.getJson()));
 			return new SimpleResponse(true);

@@ -2,7 +2,7 @@
 	"messageHeader": {
 		"sendingFacility": {
 			"identifier": "4090",
-			"name": "My Cool Sending Facility"
+			"name": "My Cool SF"
 		},
 		"endPoint": "Our Random HUB",
 		"dateTimeOfMessage": "20151027141101",
