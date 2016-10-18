@@ -2,6 +2,7 @@
 	"$schema": "http://json-schema.org/schema#",
 	"id": "https://raw.githubusercontent.com/mogikanen9/json-schema-validation-experiments/basic-validation-with-everit-org/schemas/message-header.json",
 	"title": "Header of a message with Healthcare Data",
+	"type": "object",
 	"definitions": {
 		"SendingFacility": {
 			"type": "object",
@@ -21,32 +22,33 @@
 			"required": [
 				"identifier"
 			]
+		},
+		"MessageHeader": {
+			"properties": {
+				"sendingFacility": {
+					"$ref": "#/definitions/SendingFacility"
+				},
+				"endPoint": {
+					"type": "string"
+				},
+				"dateTimeOfMessage": {
+					"type": "string",
+					"maxLength": 26
+				},
+				"messageType": {
+					"type": "string",
+					"maxLength": 15
+				},
+				"messageControlId": {
+					"type": "string",
+					"maxLength": 20
+				}
+			},
+			"required": [
+				"sendingFacility",
+				"dateTimeOfMessage",
+				"messageType"
+			]
 		}
-	},
-	"type": "object",
-	"properties": {
-		"sendingFacility": {
-			"$ref": "#/definitions/SendingFacility"
-		},
-		"endPoint": {
-			"type": "string"
-		},
-		"dateTimeOfMessage": {
-			"type": "string",
-			"maxLength": 26
-		},
-		"messageType": {
-			"type": "string",
-			"maxLength": 15
-		},
-		"messageControlId": {
-			"type": "string",
-			"maxLength": 20
-		}
-	},
-	"required": [
-		"sendingFacility",
-		"dateTimeOfMessage",
-		"messageType"
-	]
+	}
 }
