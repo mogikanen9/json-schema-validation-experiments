@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/schema#",
-	"id": "https://github.com/mogikanen9/json-schema-validation-experiments/schemas/message.json",
-	"title": "Message with Healthcare Data",	
+	"id": "https://raw.githubusercontent.com/mogikanen9/json-schema-validation-experiments/basic-validation-with-everit-org/schemas/message.json",
+	"title": "Message with Healthcare Data",
 	"definitions": {
 		"SendingFacility": {
 			"type": "object",
@@ -27,11 +27,18 @@
 				},
 				"endPoint": {
 					"type": "string"
+				},
+				"dateTimeOfMessage": {
+					"type": "string"
+				},
+				"messageType": {
+					"type": "string"
 				}
 			},
 			"required": [
 				"sendingFacility",
-				"endPoint"
+				"dateTimeOfMessage",
+				"messageType"
 			]
 		}
 	},
