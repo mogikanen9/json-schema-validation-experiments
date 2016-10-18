@@ -24,6 +24,7 @@
 			]
 		},
 		"MessageHeader": {
+			"type": "object",
 			"properties": {
 				"sendingFacility": {
 					"$ref": "#/definitions/SendingFacility"
