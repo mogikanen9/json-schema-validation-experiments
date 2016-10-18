@@ -1,9 +1,9 @@
 {
 	"$schema": "http://json-schema.org/schema#",
-	"id": "https://github.com/mogikanen9/json-schema-validation-experiments/schemas/physician.json",
+	"id": "https://raw.githubusercontent.com/mogikanen9/json-schema-validation-experiments/basic-validation-with-everit-org/schemas/physician.json",
 	"title": "Sample JSON Schema to describe physician",
 	"definitions": {
-		"address": {
+		"myAddress": {
 			"type": "object",
 			"properties": {
 				"street": {
@@ -20,7 +20,7 @@
 				}
 			},
 			"required": [
-				"street_address",
+				"street",
 				"city",
 				"postalCode"
 			]
@@ -47,7 +47,7 @@
 			"exclusiveMinimum": true
 		}
 	},
-	"clinics": {
+	"clinic": {
 		"type": "object",
 		"properties": {
 			"name": {
@@ -55,9 +55,13 @@
 				"type": "string"
 			},
 			"address": {
-				"$ref": "#/definitions/address"
+				"$ref": "#/definitions/myAddress"
 			}
-		}
+		},
+		"required": [
+			"name",
+			"address"
+		]
 	},
 	"required": [
 		"cpso",
