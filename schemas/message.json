@@ -2,50 +2,13 @@
 	"$schema": "http://json-schema.org/schema#",
 	"id": "https://raw.githubusercontent.com/mogikanen9/json-schema-validation-experiments/basic-validation-with-everit-org/schemas/message.json",
 	"title": "Message with Healthcare Data",
-	"definitions": {
-		"SendingFacility": {
-			"type": "object",
-			"properties": {
-				"identifier": {
-					"type": "string",
-					"pattern": "^[a-zA-Z0-9_]*$",
-					"minLength": 2
-				},
-				"name": {
-					"type": "string"
-				}
-			},
-			"required": [
-				"identifier"
-			]
-		},
-		"MessageHeader": {
-			"type": "object",
-			"properties": {
-				"sendingFacility": {
-					"$ref": "#/definitions/SendingFacility"
-				},
-				"endPoint": {
-					"type": "string"
-				},
-				"dateTimeOfMessage": {
-					"type": "string"
-				},
-				"messageType": {
-					"type": "string"
-				}
-			},
-			"required": [
-				"sendingFacility",
-				"dateTimeOfMessage",
-				"messageType"
-			]
-		}
+	"schema-message-header": {
+		"id": "https://raw.githubusercontent.com/mogikanen9/json-schema-validation-experiments/basic-validation-with-everit-org/schemas/message-header.json"
 	},
 	"type": "object",
 	"properties": {
 		"messageHeader": {
-			"$ref": "#/definitions/MessageHeader"
+			"$ref": "#/schema-message-header/MessageHeader"
 		}
 	},
 	"required": [
