@@ -8,7 +8,7 @@
 	"type": "object",
 	"properties": {
 		"messageHeader": {
-			"$ref": "#/schema-message-header/MessageHeader"
+			"$ref": "#/schema-message-header"
 		}
 	},
 	"required": [
