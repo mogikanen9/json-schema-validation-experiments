@@ -1,6 +1,8 @@
 package com.mogikanensoftware.json.schema.validation.service.impl;
 
-import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.everit.json.schema.Schema;
 import org.everit.json.schema.ValidationException;
@@ -21,8 +23,18 @@ public class EveritJsonValidationServiceImpl implements ValidationService {
 			schema.validate(new JSONObject(request.getJson()));
 			return new SimpleResponse(true);
 		} catch (ValidationException ve) {
-			System.err.println(ve.getMessage());
-			return new SimpleResponse(false,Arrays.asList(ve.getMessage()));
+
+			ve.printStackTrace();
+			
+			Set<String> validationErrors = new HashSet<>();
+			validationErrors.add(ve.getErrorMessage());
+
+			if (ve.getCausingExceptions().size() > 1) {
+				validationErrors.addAll(ve.getCausingExceptions().stream().map(ValidationException::getErrorMessage)
+						.collect(Collectors.toSet()));
+			}
+
+			return new SimpleResponse(false, validationErrors);
 		}
 	}
 

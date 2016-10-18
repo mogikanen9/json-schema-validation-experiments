@@ -1,15 +1,13 @@
 {
-	"cpso": "12345",
+	"cpso": "126345",
 	"firstName": "John",
 	"lastName": "Doe",
-	"practiceYears": 20,
+	"practiceYears": 7,
 	"clinic": {
 		"name": "My Supder DUper fancy Clinic",
 		"address": {
-			"street": "150 Bloor Str. Suite 900",
 			"city": "Toronto",
-			"province": "ON",
-			"postalCode": "M8H 7V2"
+			"province": "ON"
 		}
 	}
 }

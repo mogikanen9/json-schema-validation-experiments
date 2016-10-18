@@ -20,19 +20,6 @@ public class EveritJsonValidationServiceImplTest extends AbstractTest{
 		 messageSchema = readResource("/json/schema/basic/message.json");
 	}
 	
-	@Test
-	public void testValidPhysicianJsonData() throws Exception {
-	
-		String physicianData = readResource("/json/data/basic/physician-sample-valid-1.json");
-
-		Request request = new SimpleRequest(physicianData, physicianSchema);
-
-		ValidationService service = new EveritJsonValidationServiceImpl();
-		Response response = service.validate(request);
-		Assert.assertNotNull(response);
-		Assert.assertTrue(response.isValid());
-
-	}
 
 	@Test
 	public void testInvalidJsonDataMissingFirstName() throws Exception {		
@@ -68,19 +55,6 @@ public class EveritJsonValidationServiceImplTest extends AbstractTest{
 
 	}
 
-	@Test
-	public void testValidPhysicianJsonData2() throws Exception {		
-
-		String physicianData = readResource("/json/data/basic/physician-sample-valid-2.json");
-
-		Request request = new SimpleRequest(physicianData, physicianSchema);
-
-		ValidationService service = new EveritJsonValidationServiceImpl();
-		Response response = service.validate(request);
-		Assert.assertNotNull(response);
-		Assert.assertTrue(response.isValid());
-
-	}
 
 	@Test
 	public void testInvalidJsonDataPracticeYear0() throws Exception {		
@@ -138,6 +112,26 @@ public class EveritJsonValidationServiceImplTest extends AbstractTest{
 		Response response = service.validate(request);
 		Assert.assertNotNull(response);
 		Assert.assertFalse(response.isValid());
+		Assert.assertNotNull(response.getErrorMessages());
+		Assert.assertTrue(response.getErrorMessages().size()>1);
+
+	}
+	
+	@Test
+	public void testInvalidJsonDataBadClinicAddress() throws Exception {		
+
+		String physicianData = readResource("/json/data/basic/physician-sample-invalid-clinic-bad-address.json");
+
+		Request request = new SimpleRequest(physicianData, physicianSchema);
+
+		ValidationService service = new EveritJsonValidationServiceImpl();
+		Response response = service.validate(request);
+		Assert.assertNotNull(response);
+		Assert.assertFalse(response.isValid());
+		Assert.assertNotNull(response.getErrorMessages());
+		Assert.assertFalse(response.getErrorMessages().isEmpty());
+		Assert.assertTrue(response.getErrorMessages().size()==3);
+		response.getErrorMessages().forEach(System.out::println);
 
 	}
 }

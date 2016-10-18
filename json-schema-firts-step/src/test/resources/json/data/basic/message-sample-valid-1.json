@@ -4,6 +4,8 @@
 			"identifier": "4090",
 			"name": "My Cool Sending Facility"
 		},
-		"endPoint": "Our Random HUB"
+		"endPoint": "Our Random HUB",
+		"dateTimeOfMessage": "20151027141101",
+		"messageType": "ADT_A01"
 	}
 }
