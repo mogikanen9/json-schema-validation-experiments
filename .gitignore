@@ -4,3 +4,6 @@ json-schema-firts-step/.classpath
 json-schema-firts-step/.project
 
 *.prefs
+*.classpath
+json-schema-everit/.project
+*.project
