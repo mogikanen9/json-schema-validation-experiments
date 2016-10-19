@@ -1,0 +1,13 @@
+{
+	"cpso": "126345",
+	"firstName": "John",
+	"lastName": "Doe",
+	"practiceYears": 7,
+	"clinic": {
+		"name": "My Supder DUper fancy Clinic",
+		"address": {
+			"city": "Toronto",
+			"province": "ON"
+		}
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"id": "https://raw.githubusercontent.com/mogikanen9/json-schema-validation-experiments/basic-validation-with-everit-org/schemas/message.json",
+	"title": "Message with Healthcare Data",	
+	"type": "object",
+	"properties": {
+		"messageHeader": {
+			"$ref": "message-header.json#/definitions/MessageHeader"
+		}
+	},
+	"required": [
+		"messageHeader"
+	]
+}

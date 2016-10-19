@@ -1,0 +1,11 @@
+{
+	"messageHeader": {
+		"sendingFacility": {
+			"identifier": "4090",
+			"name": "My Cool SF"
+		},
+		"endPoint": "Our Random HUB",
+		"dateTimeOfMessage": "20151027141101",
+		"messageType": "ADT_A01"
+	}
+}

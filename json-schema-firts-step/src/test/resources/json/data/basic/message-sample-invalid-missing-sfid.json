@@ -1,0 +1,8 @@
+{
+	"messageHeader": {
+		"sendingFacility": {			
+			"name": "My Cool Sending Facility"
+		},
+		"endPoint": "Our Random HUB"
+	}
+}
