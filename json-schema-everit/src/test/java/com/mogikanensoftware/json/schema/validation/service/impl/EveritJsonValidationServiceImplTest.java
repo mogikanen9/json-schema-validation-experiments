@@ -17,15 +17,15 @@ public class EveritJsonValidationServiceImplTest{
 	private ResourceHelper resourceHelper = new ResourceHelper();
 		
 	public EveritJsonValidationServiceImplTest() throws IOException{
-		 physicianSchema = resourceHelper.readResource(EveritJsonValidationServiceImplTest.class,"/json/schema/basic/physician.json");
-		 messageSchema = resourceHelper.readResource(EveritJsonValidationServiceImplTest.class,"/json/schema/basic/message.json");
+		 physicianSchema = resourceHelper.readResource("/json/schema/basic/physician.json");
+		 messageSchema = resourceHelper.readResource("/json/schema/basic/message.json");
 	}
 	
 
 	@Test
 	public void testInvalidJsonDataMissingFirstName() throws Exception {		
 
-		String physicianData = resourceHelper.readResource(EveritJsonValidationServiceImplTest.class,"/json/data/basic/physician-sample-invalid-no-firstname.json");
+		String physicianData = resourceHelper.readResource("/json/data/basic/physician-sample-invalid-no-firstname.json");
 
 		Request request = new SimpleRequest(physicianData, physicianSchema);
 
@@ -42,7 +42,7 @@ public class EveritJsonValidationServiceImplTest{
 	@Test
 	public void testInvalidJsonDataMissingCpso() throws Exception {
 
-		String physicianData = resourceHelper.readResource(EveritJsonValidationServiceImplTest.class,"/json/data/basic/physician-sample-invalid-no-cpso.json");
+		String physicianData = resourceHelper.readResource("/json/data/basic/physician-sample-invalid-no-cpso.json");
 
 		Request request = new SimpleRequest(physicianData, physicianSchema);
 
@@ -60,7 +60,7 @@ public class EveritJsonValidationServiceImplTest{
 	@Test
 	public void testInvalidJsonDataPracticeYear0() throws Exception {		
 
-		String physicianData = resourceHelper.readResource(EveritJsonValidationServiceImplTest.class,"/json/data/basic/physician-sample-invalid-practice-years.json");
+		String physicianData = resourceHelper.readResource("/json/data/basic/physician-sample-invalid-practice-years.json");
 
 		Request request = new SimpleRequest(physicianData, physicianSchema);
 
@@ -77,7 +77,7 @@ public class EveritJsonValidationServiceImplTest{
 	@Test
 	public void testValidPhysicianJsonDataWithClinic() throws Exception {		
 
-		String physicianData = resourceHelper.readResource(EveritJsonValidationServiceImplTest.class,"/json/data/basic/physician-sample-valid-with-clinic.json");
+		String physicianData = resourceHelper.readResource("/json/data/basic/physician-sample-valid-with-clinic.json");
 
 		Request request = new SimpleRequest(physicianData, physicianSchema);
 
@@ -91,7 +91,7 @@ public class EveritJsonValidationServiceImplTest{
 	@Test
 	public void testValidMessageJsonData1() throws Exception {		
 
-		String messageData = resourceHelper.readResource(EveritJsonValidationServiceImplTest.class,"/json/data/basic/message-sample-valid-1.json");
+		String messageData = resourceHelper.readResource("/json/data/basic/message-sample-valid-1.json");
 
 		Request request = new SimpleRequest(messageData, messageSchema);
 
@@ -105,7 +105,7 @@ public class EveritJsonValidationServiceImplTest{
 	@Test
 	public void testInValidMessageJsonDataMIssingSFId() throws Exception {		
 
-		String messageData = resourceHelper.readResource(EveritJsonValidationServiceImplTest.class,"/json/data/basic/message-sample-invalid-missing-sfid.json");
+		String messageData = resourceHelper.readResource("/json/data/basic/message-sample-invalid-missing-sfid.json");
 
 		Request request = new SimpleRequest(messageData, messageSchema);
 
@@ -121,7 +121,7 @@ public class EveritJsonValidationServiceImplTest{
 	@Test
 	public void testInvalidJsonDataBadClinicAddress() throws Exception {		
 
-		String physicianData = resourceHelper.readResource(EveritJsonValidationServiceImplTest.class,"/json/data/basic/physician-sample-invalid-clinic-bad-address.json");
+		String physicianData = resourceHelper.readResource("/json/data/basic/physician-sample-invalid-clinic-bad-address.json");
 
 		Request request = new SimpleRequest(physicianData, physicianSchema);
 

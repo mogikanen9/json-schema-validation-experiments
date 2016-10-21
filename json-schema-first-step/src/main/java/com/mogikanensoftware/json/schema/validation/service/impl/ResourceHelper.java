@@ -1,16 +1,18 @@
 package com.mogikanensoftware.json.schema.validation.service.impl;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.util.stream.Collectors;
 
-public class ResourceHelper {
+import org.apache.commons.io.IOUtils;
 
-	public String readResource(Class clazz, String relativePath) throws IOException {
-		String path =clazz.getResource(relativePath).getPath();
-		if (path.startsWith("/") && System.getProperty("os.name").contains("indow")) {
-			path = path.substring(1);
-		}
-		return new String(Files.readAllBytes(Paths.get(path)));
+public class ResourceHelper {		
+	
+	public String readResource(String relativePath) throws IOException {
+		
+		String resourceContent = IOUtils.readLines(ResourceHelper.class.getResourceAsStream(relativePath),"UTF-8")
+				.stream().collect(Collectors.joining());
+		return resourceContent;
+		
+		
 	}
 }
