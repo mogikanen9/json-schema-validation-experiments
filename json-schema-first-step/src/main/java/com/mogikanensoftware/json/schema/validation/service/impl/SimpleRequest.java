@@ -13,15 +13,12 @@ public class SimpleRequest implements Request, Serializable {
 	private URI schemaURI;
 	private String schemaContent;
 
-	public SimpleRequest(String json, String schemaContent) {
+	public SimpleRequest(String json, String schemaContent, URI schemaURI) {
 		this.schemaContent = schemaContent;
 		this.json = json;
+		this.schemaURI = schemaURI;
 	}
 
-	public SimpleRequest(String json, URI schemaURI) {
-		this.schemaURI = schemaURI;
-		this.json = json;
-	}
 
 	public String getJson() {
 		return json;
