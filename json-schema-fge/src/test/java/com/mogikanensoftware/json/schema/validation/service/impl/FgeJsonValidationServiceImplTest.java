@@ -6,7 +6,7 @@ public class FgeJsonValidationServiceImplTest extends AbstractJsonValidationServ
 
 	public FgeJsonValidationServiceImplTest() throws Exception {
 		super.init();
-		
+
 		service = new FgeJsonValidationServiceImpl();
 	}
 

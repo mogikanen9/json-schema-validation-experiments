@@ -117,7 +117,6 @@ public abstract class AbstractJsonValidationServiceTest {
 		Assert.assertFalse(response.isValid());
 		Assert.assertNotNull(response.getErrorMessages());
 		Assert.assertTrue(response.getErrorMessages().size()>0);
-
 	}
 	
 	@Test
@@ -133,6 +132,18 @@ public abstract class AbstractJsonValidationServiceTest {
 		Assert.assertNotNull(response.getErrorMessages());
 		Assert.assertFalse(response.getErrorMessages().isEmpty());
 		Assert.assertTrue(response.getErrorMessages().size()>0);
-
+		boolean streetErrMsgFound = false;
+		boolean postalCodeErrMsgFound = false;
+		for (String errorMassage:response.getErrorMessages()) {
+			if(!streetErrMsgFound){
+				streetErrMsgFound = errorMassage.indexOf("street")!=-1;
+			}
+			if(!postalCodeErrMsgFound){
+				postalCodeErrMsgFound = errorMassage.indexOf("postalCode")!=-1;
+			}
+			
+			System.out.println(errorMassage);
+		}
+		Assert.assertTrue(streetErrMsgFound);
 	}
 }
