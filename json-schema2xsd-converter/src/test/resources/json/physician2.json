@@ -1,0 +1,49 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"id": "https://raw.githubusercontent.com/mogikanen9/json-schema-validation-experiments/basic-validation-with-everit-org/schemas/physician.json",
+	"title": "Sample JSON Schema to describe physician",
+	"type": "object",
+	"properties": {
+		"cpso": {
+			"description": "Unique identifier which is provided/genrated by College of Physicians of Ontario",
+			"type": "string"
+		},
+		"firstName": {
+			"description": "First Name",
+			"type": "string"
+		},
+		"lastName": {
+			"description": "Last Name",
+			"type": "string"
+		},
+		"practiceYears": {
+			"description": "Number of years of Practicing in Canada",
+			"type": "integer",
+			"minimum": 0,
+			"exclusiveMinimum": true
+		},
+		"clinic": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"description": "Name of the clinic",
+					"type": "string"
+				},
+				"address": {
+					"description": "Full clinic address",
+					"type": "string"
+				}
+			},
+			"required": [
+				"name",
+				"address"
+			]
+		}
+	},
+	"required": [
+		"cpso",
+		"firstName",
+		"lastName",
+		"clinic"
+	]
+}

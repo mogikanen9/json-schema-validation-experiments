@@ -6,5 +6,5 @@ import org.w3c.dom.Document;
 
 public interface XMLHelper {
 
-	void saveXMLDomDocument(final Document xsdDocument, final OutputStream out) throws XMLHelperException;
+	void print(final Document xsdDocument, final OutputStream out) throws XMLHelperException;
 }

@@ -25,7 +25,7 @@ public class EthloJsonSchema2XsdConverterImpl implements JsonSchema2XsdConverter
 		try {
 			final OuterWrapping wrapping = OuterWrapping.TYPE;
 			final Document xsdDocument = Jsons2Xsd.convert(jsonSchema, targetNameSpaceUri, wrapping, targetTypeName);
-			xmlHelper.saveXMLDomDocument(xsdDocument, xsdFileOut);
+			xmlHelper.print(xsdDocument, xsdFileOut);
 
 		} catch (Exception e) {
 			throw new ConverterException(e.getMessage(), e);

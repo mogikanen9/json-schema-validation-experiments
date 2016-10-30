@@ -15,7 +15,7 @@ import com.mogikanensoftware.json.schema.convert.XMLHelperException;
 
 public class SimpleXMLHelperImpl implements XMLHelper {
 	
-	public void saveXMLDomDocument(final Document xsdDocument, final OutputStream out) throws XMLHelperException {
+	public void print(final Document xsdDocument, final OutputStream out) throws XMLHelperException {
 		try {
 			Transformer tr = TransformerFactory.newInstance().newTransformer();
 			tr.setOutputProperty(OutputKeys.INDENT, "yes");
