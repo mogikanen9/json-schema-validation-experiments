@@ -14,5 +14,6 @@
 		<module>json-schema-everit</module>
 		<module>json-schema-fge</module>
 		<module>json-schema2xsd-converter</module>
+		<module>xsd2json-schema-converter</module>
 	</modules>
 </project>

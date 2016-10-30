@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/physician" xmlns:tns="http://www.example.org/physician" elementFormDefault="qualified">
+
+
+    <complexType name="name">
+    	<sequence>
+    		<element name="firstName" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="lastName" type="string" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+
+    <complexType name="address">
+    	<sequence>
+    		<element name="line1" maxOccurs="1" minOccurs="1">
+    			<simpleType>
+    				<restriction base="string">
+    					<maxLength value="255"></maxLength>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="line2" maxOccurs="1" minOccurs="0">
+    			<simpleType>
+    				<restriction base="string">
+    					<maxLength value="255"></maxLength>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="line3" maxOccurs="1" minOccurs="0">
+    			<simpleType>
+    				<restriction base="string">
+    					<maxLength value="255"></maxLength>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="city" maxOccurs="1" minOccurs="1">
+    			<simpleType>
+    				<restriction base="string">
+    					<maxLength value="50"></maxLength>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="province" maxOccurs="1" minOccurs="1">
+    			<simpleType>
+    				<restriction base="string">
+    					<maxLength value="50"></maxLength>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="zip" maxOccurs="1" minOccurs="1">
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="7"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="clinic">
+    	<sequence>
+    		<element name="name" maxOccurs="1" minOccurs="1">
+    			<simpleType>
+    				<restriction base="string">
+    					<maxLength value="255"></maxLength>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="address" type="tns:address" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+
+
+
+    <complexType name="physician">
+    	<sequence>
+    		<element name="cpso" type="string" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="address" type="tns:address" maxOccurs="1" minOccurs="1"></element>
+    		<element name="clinic" type="tns:clinic" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    	</sequence>
+    </complexType>
+
+
+</schema>
