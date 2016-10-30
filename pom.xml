@@ -13,5 +13,6 @@
 		<module>json-schema-first-step</module>
 		<module>json-schema-everit</module>
 		<module>json-schema-fge</module>
+		<module>json-schema2xsd-converter</module>
 	</modules>
 </project>

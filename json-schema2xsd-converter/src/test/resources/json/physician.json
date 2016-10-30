@@ -1,0 +1,33 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"id": "http://mogikanen9.github.io/schemas/physician.json",
+	"title": "Sample JSON Schema to describe physician",
+	"type": "object",
+	"properties": {
+		"cpso": {
+			"description": "Unique identifier which is provided/genrated by College of Physicians of Ontario",
+			"type": "string"
+		},
+		"firstName": {
+			"description": "First Name",
+			"type": "string",
+			"pattern": "[a-zA-Z]*"
+		},
+		"lastName": {
+			"description": "Last Name",
+			"type": "string",
+			"pattern": "[a-zA-Z]*"
+		},
+		"practiceYears": {
+			"description": "Number of years of Practicing in Canada",
+			"type": "integer",
+			"minimum": 0,
+			"exclusiveMinimum": true
+		}
+	},
+	"required": [
+		"cpso",
+		"firstName",
+		"lastName"
+	]
+}
